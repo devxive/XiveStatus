@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_XIVESTATUS_FORM_LBL_SERVICE_LOG_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_XIVESTATUS_FORM_LBL_SERVICE_LOG_CREATED_BY"
+            description="COM_XIVESTATUS_FORM_DESC_SERVICE_LOG_CREATED_BY"  /> 
+
+       <field name="type_of_service" type="list"
+                
+            label="COM_XIVESTATUS_FORM_LBL_SERVICE_LOG_TYPE_OF_SERVICE"
+            description="COM_XIVESTATUS_FORM_DESC_SERVICE_LOG_TYPE_OF_SERVICE" 
+                
+                
+                 required="true" 
+            filter="raw">
+                <option value="availability">Availability</option>
+                <option value="response_time_mainsite">Response Time - Mainsite</option>
+                <option value="response_time_appserver">Response Time - Appserver</option>
+                <option value="response_time_api">Response Time - API</option>
+                <option value="exceptions">geplante Ausnahme</option>
+        </field> 
+
+       <field name="entry" type="text"
+                
+            label="COM_XIVESTATUS_FORM_LBL_SERVICE_LOG_ENTRY"
+            description="COM_XIVESTATUS_FORM_DESC_SERVICE_LOG_ENTRY" 
+                
+                
+                 required="true" 
+            filter="raw"
+            maxlength="50" /> 
+
+       <field name="remarks" type="textarea"
+                
+            label="COM_XIVESTATUS_FORM_LBL_SERVICE_LOG_REMARKS"
+            description="COM_XIVESTATUS_FORM_DESC_SERVICE_LOG_REMARKS" 
+                
+                
+                
+            cols="40"
+            rows="40"
+            filter="raw" /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+
+</form>
